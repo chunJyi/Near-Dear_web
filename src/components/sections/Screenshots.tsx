@@ -14,7 +14,7 @@ const screenshots = [
     description: 'Track family members in real-time with accurate GPS positioning',
     icon: MapPin,
     gradient: 'from-green-400 to-emerald-500',
-    image: '/images/live.jpg',
+    image: '/Near-Dear_web/images/live.jpg',
   },
   {
     id: 'family-list',
@@ -22,7 +22,7 @@ const screenshots = [
     description: 'View all family members and their current status',
     icon: Users,
     gradient: 'from-blue-400 to-indigo-500',
-    image: '/images/family.jpg',
+    image: '/Near-Dear_web/images/family.jpg',
   },
   {
     id: 'settings',
@@ -30,7 +30,7 @@ const screenshots = [
     description: 'Customize your privacy and notification preferences',
     icon: Settings,
     gradient: 'from-gray-400 to-slate-500',
-    image: '/images/settings.jpg',
+    image: '/Near-Dear_web/images/settings.jpg',
   },
 ];
 
