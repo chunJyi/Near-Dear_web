@@ -89,7 +89,7 @@ export function Download() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     {/* Direct APK Download */}
                     <motion.a
-                      href="https://github.com/chunJyl/Near-Dear_web/releases/download/V1/Near.Dear_D.apk"
+                      href="https://github.com/chunJyi/Near-Dear_web/releases/download/V1/Near.Dear_D.apk"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-colors duration-200 shadow-lg shadow-primary-500/30"
