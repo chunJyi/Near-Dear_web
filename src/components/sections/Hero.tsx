@@ -182,7 +182,7 @@ export function Hero() {
             <PhoneMockup color="black" className="relative z-10">
               <div className="w-full h-full">
                 <img
-                  src="/Near-Dear_web/images/home.jpg"
+                  src="/images/home.jpg"
                   alt="Near&Dear App Screenshot home"
                   className="w-full h-full object-cover"
                 />
