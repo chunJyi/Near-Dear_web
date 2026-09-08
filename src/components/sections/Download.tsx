@@ -87,12 +87,34 @@ export function Download() {
 
                   {/* Store Badges */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Google Play */}
+                    {/* Direct APK Download */}
+                    <motion.a
+                      href="https://github.com/chunJyl/Near-Dear_web/releases/download/V1/Near.Dear_D.apk"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-colors duration-200 shadow-lg shadow-primary-500/30"
+                    >
+                      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                      <div className="text-left">
+                        <div className="text-xs text-white/80">
+                          DOWNLOAD NOW
+                        </div>
+                        <div className="text-sm font-semibold text-white">
+                          Android APK
+                        </div>
+                      </div>
+                    </motion.a>
+
+                    {/* Google Play (Coming Soon) */}
                     <motion.a
                       href="#"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900 dark:bg-white rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-200"
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900 dark:bg-white rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-200 opacity-75"
                     >
                       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
                         <path
@@ -114,30 +136,10 @@ export function Download() {
                       </svg>
                       <div className="text-left">
                         <div className="text-xs text-neutral-400 dark:text-neutral-500">
-                          GET IT ON
-                        </div>
-                        <div className="text-sm font-semibold text-white dark:text-neutral-900">
-                          Google Play
-                        </div>
-                      </div>
-                    </motion.a>
-
-                    {/* App Store (Coming Soon) */}
-                    <motion.a
-                      href="#"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900 dark:bg-white rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-200 opacity-75"
-                    >
-                      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                      </svg>
-                      <div className="text-left">
-                        <div className="text-xs text-neutral-400 dark:text-neutral-500">
                           Coming Soon
                         </div>
                         <div className="text-sm font-semibold text-white dark:text-neutral-900">
-                          App Store
+                          Google Play
                         </div>
                       </div>
                     </motion.a>
