@@ -1,4 +1,4 @@
-import { Header, Footer, Hero, Features, Screenshots, Download, Privacy } from '@/components';
+import { Header, Footer, Hero, Features, HowItWorks, SharingModes, Screenshots, Privacy, FAQ, Download } from '@/components';
 
 export default function Home() {
   return (
@@ -7,8 +7,11 @@ export default function Home() {
       <main className="pt-16 lg:pt-20">
         <Hero />
         <Features />
+        <HowItWorks />
+        <SharingModes />
         <Screenshots />
         <Privacy />
+        <FAQ />
         <Download />
       </main>
       <Footer />

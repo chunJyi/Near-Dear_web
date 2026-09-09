@@ -5,31 +5,39 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { PhoneMockup, PhoneScreen } from '@/components/ui/PhoneMockup';
-import { ChevronLeft, ChevronRight, MapPin, Users, Settings } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Users, Settings, Radio } from 'lucide-react';
 
 const screenshots = [
   {
-    id: 'live-location',
-    title: 'Live Location',
-    description: 'Track family members in real-time with accurate GPS positioning',
+    id: 'home',
+    title: 'Home Screen',
+    description: 'Location toggle and friends carousel — your control center.',
     icon: MapPin,
-    gradient: 'from-green-400 to-emerald-500',
+    gradient: 'from-primary-400 to-primary-500',
+    image: '/images/home.jpg',
+  },
+  {
+    id: 'friends',
+    title: 'Friends Screen',
+    description: 'Search, add friends, manage requests, and mark favorites.',
+    icon: Users,
+    gradient: 'from-success to-emerald-500',
     image: '/images/live.jpg',
   },
   {
-    id: 'family-list',
-    title: 'Family List',
-    description: 'View all family members and their current status',
-    icon: Users,
-    gradient: 'from-blue-400 to-indigo-500',
+    id: 'friend-detail',
+    title: 'Friend Detail',
+    description: 'Switch sharing mode per friend — Live, Pinned, or Hidden.',
+    icon: Radio,
+    gradient: 'from-warning to-amber-500',
     image: '/images/family.jpg',
   },
   {
     id: 'settings',
     title: 'Settings',
-    description: 'Customize your privacy and notification preferences',
+    description: 'Dark mode, distance slider, and app preferences.',
     icon: Settings,
-    gradient: 'from-gray-400 to-slate-500',
+    gradient: 'from-neutral-400 to-slate-500',
     image: '/images/settings.jpg',
   },
 ];
@@ -102,7 +110,7 @@ export function Screenshots() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <SectionHeading
-          title="See LocateMe in"
+          title="See Near&Dear in"
           highlight="Action"
           description="Explore the intuitive interface designed for simplicity and ease of use."
         />
@@ -138,14 +146,14 @@ export function Screenshots() {
               {/* Navigation Arrows */}
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-x-12 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-lg flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="absolute left-0 top-1/2 -translate-x-12 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-lg flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-primary-500 transition-colors"
                 aria-label="Previous screenshot"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 translate-x-12 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-lg flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="absolute right-0 top-1/2 translate-x-12 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-lg flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-primary-500 transition-colors"
                 aria-label="Next screenshot"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -190,7 +198,7 @@ export function Screenshots() {
                     className={cn(
                       'h-2 rounded-full transition-all duration-300',
                       index === activeIndex
-                        ? 'w-8 bg-primary-600'
+                        ? 'w-8 bg-primary-500'
                         : 'w-2 bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400 dark:hover:bg-neutral-600'
                     )}
                     aria-label={`Go to screenshot ${index + 1}`}
@@ -232,7 +240,7 @@ export function Screenshots() {
                       <p className={cn(
                         'text-sm font-medium',
                         index === activeIndex
-                          ? 'text-primary-700 dark:text-primary-400'
+                          ? 'text-primary-600 dark:text-primary-400'
                           : 'text-neutral-700 dark:text-neutral-300'
                       )}>
                         {screenshot.title}

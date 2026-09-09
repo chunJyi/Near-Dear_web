@@ -1,24 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { cn, scrollToElement } from '@/lib/utils';
+import { scrollToElement } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { PhoneMockup } from '@/components/ui/PhoneMockup';
-import { MapPin, Navigation, Users, Shield, ArrowRight, Star } from 'lucide-react';
-
-const trustUsers = [
-  { color: 'bg-primary-500' },
-  { color: 'bg-secondary-500' },
-  { color: 'bg-green-500' },
-  { color: 'bg-orange-500' },
-  { color: 'bg-pink-500' },
-];
+import { MapPin, Users, Shield, ArrowRight, Download } from 'lucide-react';
 
 const floatingElements = [
   { icon: MapPin, x: -60, y: 40, delay: 0 },
-  { icon: Navigation, x: 280, y: -20, delay: 0.5 },
+  { icon: Users, x: 280, y: -20, delay: 0.5 },
   { icon: Shield, x: 300, y: 400, delay: 1 },
-  { icon: Users, x: -80, y: 350, delay: 1.5 },
 ];
 
 export function Hero() {
@@ -45,9 +36,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-neutral-900 shadow-sm border border-neutral-200 dark:border-neutral-800">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
                 <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                  Location Tracking Made Simple
+                  v1.2.1 — Now Available
                 </span>
               </span>
             </motion.div>
@@ -60,13 +51,13 @@ export function Hero() {
               className="space-y-2"
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-neutral-100 leading-tight">
-                Stay Connected
+                Near<span className="text-primary-500">&</span>Dear
               </h1>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                  Stay Safe
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+                  Stay Close to the Ones You Love
                 </span>
-              </h1>
+              </h2>
             </motion.div>
 
             {/* Description */}
@@ -76,8 +67,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg text-neutral-600 dark:text-neutral-400 max-w-lg leading-relaxed"
             >
-              LocateMe helps you share real-time location with your loved ones
-              and track what matters most. Because their safety is your peace of mind.
+              Share your live location with the people who matter most — and stay in control of exactly who sees it.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -87,42 +77,19 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              {/* Google Play Button */}
               <motion.a
-                href="#download"
+                href="https://drive.google.com/uc?export=download&confirm=t&id=1WOSGASlfUQbEcY7N2HEXKNdzXXbWv0df"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900 dark:bg-white rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-200"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-colors duration-200 shadow-lg shadow-primary-500/30"
               >
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z"
-                    fill="#EA4335"
-                  />
-                  <path
-                    d="M16.296 15.428L13.792 12l2.504-3.428 4.078 2.34c.694.4.694 1.36 0 1.76l-4.078 2.34z"
-                    fill="#FBBC04"
-                  />
-                  <path
-                    d="M16.296 15.428L13.792 12 3.61 1.814l10.182 10.186 2.504 3.428z"
-                    fill="#4285F4"
-                  />
-                  <path
-                    d="M16.296 8.572L3.61 22.186l12.686-10.186-2.504-3.428z"
-                    fill="#34A853"
-                  />
-                </svg>
+                <Download className="w-6 h-6 text-white" />
                 <div className="text-left">
-                  <div className="text-xs text-neutral-400 dark:text-neutral-500">
-                    GET IT ON
-                  </div>
-                  <div className="text-sm font-semibold text-white dark:text-neutral-900">
-                    Google Play
-                  </div>
+                  <div className="text-xs text-white/80">DOWNLOAD NOW</div>
+                  <div className="text-sm font-semibold text-white">Android APK</div>
                 </div>
               </motion.a>
 
-              {/* Learn More Button */}
               <Button
                 variant="outline"
                 size="lg"
@@ -140,33 +107,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex items-center gap-4"
             >
-              <div className="flex -space-x-2">
-                {trustUsers.map((user, index) => (
-                  <div
-                    key={index}
-                    className={cn(
-                      'w-10 h-10 rounded-full border-2 border-white dark:border-neutral-950 flex items-center justify-center',
-                      user.color
-                    )}
-                  >
-                    <span className="text-xs font-semibold text-white">
-                      {String.fromCharCode(65 + index)}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Trusted by <span className="font-semibold text-neutral-900 dark:text-neutral-100">1,000+</span> users
-                </p>
+              <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+                <Shield className="w-4 h-4 text-primary-500" />
+                <span>You control who sees your location</span>
               </div>
             </motion.div>
           </div>
@@ -178,7 +121,6 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Phone Mockup */}
             <PhoneMockup color="black" className="relative z-10">
               <div className="w-full h-full">
                 <img
@@ -207,7 +149,7 @@ export function Hero() {
                 style={{ left: element.x, top: element.y }}
               >
                 <div className="w-12 h-12 rounded-xl bg-white dark:bg-neutral-900 shadow-lg border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
-                  <element.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <element.icon className="w-6 h-6 text-primary-500" />
                 </div>
               </motion.div>
             ))}

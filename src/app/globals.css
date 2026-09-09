@@ -1,27 +1,32 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary-50: #EEF2FF;
-  --color-primary-100: #E0E7FF;
-  --color-primary-200: #C7D2FE;
-  --color-primary-300: #A5B4FC;
-  --color-primary-400: #818CF8;
-  --color-primary-500: #6366F1;
-  --color-primary-600: #4F46E5;
-  --color-primary-700: #4338CA;
-  --color-primary-800: #3730A3;
-  --color-primary-900: #312E81;
+  --color-primary-50: #F3F0FF;
+  --color-primary-100: #E9E4FF;
+  --color-primary-200: #D5CDFF;
+  --color-primary-300: #B8ABFF;
+  --color-primary-400: #9B89FF;
+  --color-primary-500: #806DF6;
+  --color-primary-600: #6B54E8;
+  --color-primary-700: #5A43D4;
+  --color-primary-800: #4A36B0;
+  --color-primary-900: #3D2D8E;
 
-  --color-secondary-50: #FAF5FF;
-  --color-secondary-100: #F3E8FF;
-  --color-secondary-200: #E9D5FF;
-  --color-secondary-300: #D8B4FE;
-  --color-secondary-400: #C084FC;
-  --color-secondary-500: #A855F7;
-  --color-secondary-600: #9333EA;
-  --color-secondary-700: #7E22CE;
-  --color-secondary-800: #6B21A8;
-  --color-secondary-900: #581C87;
+  --color-secondary-50: #EEF4FB;
+  --color-secondary-100: #D6E5F7;
+  --color-secondary-200: #B5D0F0;
+  --color-secondary-300: #8BB5E6;
+  --color-secondary-400: #6A9CD9;
+  --color-secondary-500: #4F7FC6;
+  --color-secondary-600: #3E68A8;
+  --color-secondary-700: #33548A;
+  --color-secondary-800: #2C4672;
+  --color-secondary-900: #283C5E;
+
+  --color-success: #16A34A;
+  --color-error: #B91C1C;
+  --color-warning: #D97706;
+  --color-info: #2563EB;
 
   --color-neutral-50: #F8FAFC;
   --color-neutral-100: #F1F5F9;
@@ -39,7 +44,11 @@
   --font-display: var(--font-inter);
 
   --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-  --shadow-card-hover: 0 20px 25px -5px rgb(99 102 241 / 0.15), 0 8px 10px -6px rgb(99 102 241 / 0.1);
+  --shadow-card-hover: 0 20px 25px -5px rgb(128 109 246 / 0.15), 0 8px 10px -6px rgb(128 109 246 / 0.1);
+
+  --z-sticky: 1100;
+  --z-dropdown: 1000;
+  --z-overlay: 1300;
 
   --animate-float: float 3s ease-in-out infinite;
   --animate-pulse-slow: pulse 3s ease-in-out infinite;
@@ -66,7 +75,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
   }
 
   .glass {
@@ -135,7 +144,7 @@
 
 /* Focus styles */
 :focus-visible {
-  @apply outline-2 outline-offset-2 outline-primary-600 dark:outline-primary-400;
+  @apply outline-2 outline-offset-2 outline-primary-500 dark:outline-primary-400;
 }
 
 /* Reduced motion */

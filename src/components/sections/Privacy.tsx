@@ -1,40 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Shield, Lock, Eye, Server, Key, Fingerprint } from 'lucide-react';
+import { Eye, ToggleLeft, Ban, Shield } from 'lucide-react';
 
 const privacyFeatures = [
   {
-    icon: Lock,
-    title: 'End-to-End Encryption',
-    description: 'All location data is encrypted from your device to the recipient. No one else can read it.',
-  },
-  {
     icon: Eye,
-    title: 'You Control Who Sees',
-    description: 'Choose exactly who can see your location. Revoke access anytime with one tap.',
+    title: 'You Decide Who Sees',
+    description: 'Nothing is shared by default. You choose exactly who can see your location.',
   },
   {
-    icon: Server,
-    title: 'Secure Infrastructure',
-    description: 'Hosted on enterprise-grade servers with 99.9% uptime and automatic backups.',
+    icon: ToggleLeft,
+    title: 'Per-Friend Sharing Mode',
+    description: 'Set each friend to Live, Pinned, or Hidden independently — full control over every connection.',
   },
   {
-    icon: Key,
-    title: 'Two-Factor Auth',
-    description: 'Add an extra layer of security with biometric or SMS verification.',
-  },
-  {
-    icon: Fingerprint,
-    title: 'Data Ownership',
-    description: 'Your data belongs to you. Delete your account and all data is permanently removed.',
+    icon: Ban,
+    title: 'Turn Off Anytime',
+    description: 'One tap to stop sharing. No waiting period, no questions asked.',
   },
   {
     icon: Shield,
-    title: 'Regular Audits',
-    description: 'Independent security firms audit our systems quarterly to ensure compliance.',
+    title: 'We Don\'t Sell Your Data',
+    description: 'Your location data stays yours. We don\'t sell or publicly share it.',
   },
 ];
 
@@ -73,7 +62,7 @@ export function Privacy() {
           badge="Privacy"
           title="Your Privacy is Our"
           highlight="Priority"
-          description="We built LocateMe with privacy at its core. Your location data is encrypted and never sold."
+          description="We built Near&Dear with privacy at its core. You control everything — nothing is shared without your explicit choice."
         />
 
         {/* Privacy Features Grid */}
@@ -82,7 +71,7 @@ export function Privacy() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
           {privacyFeatures.map((feature, index) => (
             <motion.div
@@ -92,7 +81,7 @@ export function Privacy() {
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-200 dark:group-hover:bg-primary-800/30 transition-colors duration-300">
-                  <feature.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <feature.icon className="w-6 h-6 text-primary-500" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
@@ -105,22 +94,6 @@ export function Privacy() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Trust Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 flex justify-center"
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800">
-            <Shield className="w-5 h-5 text-green-600 dark:text-green-400" />
-            <span className="text-sm font-medium text-green-700 dark:text-green-400">
-              GDPR Compliant • SOC 2 Certified • ISO 27001
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>

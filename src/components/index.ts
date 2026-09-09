@@ -11,6 +11,9 @@ export { PhoneMockup, PhoneScreen } from './ui/PhoneMockup';
 // Section Components
 export { Hero } from './sections/Hero';
 export { Features } from './sections/Features';
+export { HowItWorks } from './sections/HowItWorks';
+export { SharingModes } from './sections/SharingModes';
 export { Screenshots } from './sections/Screenshots';
-export { Download } from './sections/Download';
 export { Privacy } from './sections/Privacy';
+export { FAQ } from './sections/FAQ';
+export { Download } from './sections/Download';

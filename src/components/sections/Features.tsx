@@ -4,40 +4,40 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Card, CardHeader } from '@/components/ui/Card';
-import { Navigation, Bell, Clock, Shield, ArrowRight } from 'lucide-react';
+import { Navigation, MapPin, Users, Map } from 'lucide-react';
 
 const features = [
   {
     icon: Navigation,
-    title: 'Real-time Tracking',
-    description: 'Track live location of your family or friends in real time with precise GPS accuracy.',
+    title: 'Live Location Sharing',
+    description: 'See your friends\' current location in real time, with accurate GPS positioning.',
     color: 'from-primary-500 to-primary-600',
     bgColor: 'bg-primary-50 dark:bg-primary-950/30',
-    iconColor: 'text-primary-600 dark:text-primary-400',
+    iconColor: 'text-primary-500',
   },
   {
-    icon: Bell,
-    title: 'Instant Alerts',
-    description: 'Get notified when your loved ones arrive or leave a place. Never miss a moment.',
-    color: 'from-secondary-500 to-secondary-600',
-    bgColor: 'bg-secondary-50 dark:bg-secondary-950/30',
-    iconColor: 'text-secondary-600 dark:text-secondary-400',
+    icon: MapPin,
+    title: 'Pinned Locations',
+    description: 'Save important places like home, work, or school and share them instead of your live GPS — up to 3 saved locations.',
+    color: 'from-warning to-amber-600',
+    bgColor: 'bg-amber-50 dark:bg-amber-950/30',
+    iconColor: 'text-warning',
   },
   {
-    icon: Clock,
-    title: 'Location History',
-    description: 'View location history and travel routes. Know where they\'ve been throughout the day.',
-    color: 'from-green-500 to-green-600',
-    bgColor: 'bg-green-50 dark:bg-green-950/30',
-    iconColor: 'text-green-600 dark:text-green-400',
+    icon: Users,
+    title: 'Friend Connections',
+    description: 'Search for friends, send requests, and mark your closest people as favorites for quick access.',
+    color: 'from-success to-emerald-600',
+    bgColor: 'bg-emerald-50 dark:bg-emerald-950/30',
+    iconColor: 'text-success',
   },
   {
-    icon: Shield,
-    title: 'Privacy First',
-    description: 'End-to-end encrypted location sharing. Your data stays private and secure.',
-    color: 'from-orange-500 to-orange-600',
-    bgColor: 'bg-orange-50 dark:bg-orange-950/30',
-    iconColor: 'text-orange-600 dark:text-orange-400',
+    icon: Map,
+    title: 'Map Tracking',
+    description: 'View friends\' locations on Google Maps, with a "Follow" mode that keeps the camera centered on them automatically.',
+    color: 'from-info to-blue-600',
+    bgColor: 'bg-blue-50 dark:bg-blue-950/30',
+    iconColor: 'text-info',
   },
 ];
 
@@ -81,8 +81,8 @@ export function Features() {
         <SectionHeading
           badge="Features"
           title="Everything You Need for"
-          highlight="Safety"
-          description="Powerful features designed to keep your family connected and protected, wherever they are."
+          highlight="Connection"
+          description="Friend-based location sharing for family, close friends, roommates, and anyone who wants peace of mind."
         />
 
         {/* Features Grid */}
@@ -100,10 +100,8 @@ export function Features() {
                 hover
                 className="h-full group relative overflow-hidden"
               >
-                {/* Gradient border on hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
 
-                {/* Icon */}
                 <div className={cn(
                   'w-14 h-14 rounded-xl flex items-center justify-center mb-4',
                   feature.bgColor
@@ -111,23 +109,16 @@ export function Features() {
                   <feature.icon className={cn('w-7 h-7', feature.iconColor)} />
                 </div>
 
-                {/* Content */}
                 <CardHeader
                   title={feature.title}
                   description={feature.description}
                 />
-
-                {/* Learn More Link */}
-                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </div>
               </Card>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Additional Feature Highlight */}
+        {/* Sharing Modes Highlight */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,20 +126,20 @@ export function Features() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 lg:mt-24"
         >
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 to-secondary-600 p-8 lg:p-12">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-500 to-secondary-500 p-8 lg:p-12">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDE0em0wLTR2Mkg4VjI4aDI4ek0xNiA0MHYySDh2LTJoOHptMTItMTB2Mkg4VjI4aDIweiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
             <div className="relative grid lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <h3 className="text-2xl lg:text-3xl font-bold text-white">
-                  Advanced Geofencing Technology
+                  Per-Friend Privacy Control
                 </h3>
                 <p className="text-primary-100 max-w-lg">
-                  Set up custom geofences around important locations like home, school, or work.
-                  Get instant alerts when family members enter or leave these zones.
+                  Not a generic tracker — sharing is opt-in, per-friend, and reversible at any time.
+                  Set each friend to Live, Pinned, or Hidden independently.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
-                  {['Custom Zones', 'Smart Alerts', 'Multiple Locations', 'Real-time Updates'].map((tag) => (
+                  {['Live Mode', 'Pinned Mode', 'Hidden Mode', 'Switch Anytime'].map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium backdrop-blur-sm"
@@ -159,42 +150,26 @@ export function Features() {
                 </div>
               </div>
 
-              {/* Geofence Visualization */}
               <div className="relative h-64 lg:h-80">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  {/* Outer ring */}
                   <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                     className="absolute w-48 h-48 rounded-full border-2 border-white/20"
                   />
-                  {/* Middle ring */}
                   <motion.div
                     animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
                     className="absolute w-36 h-36 rounded-full border-2 border-white/30"
                   />
-                  {/* Inner ring */}
                   <motion.div
                     animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.7, 0.5] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                     className="absolute w-24 h-24 rounded-full border-2 border-white/40 bg-white/10 backdrop-blur-sm"
                   />
-                  {/* Center pin */}
                   <div className="relative z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center">
-                    <Navigation className="w-6 h-6 text-primary-600" />
+                    <MapPin className="w-6 h-6 text-primary-500" />
                   </div>
-                  {/* Floating dots */}
-                  <motion.div
-                    animate={{ x: [0, 20, 0], y: [0, -15, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute top-1/4 right-1/4 w-4 h-4 rounded-full bg-white/50"
-                  />
-                  <motion.div
-                    animate={{ x: [0, -15, 0], y: [0, 20, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                    className="absolute bottom-1/3 left-1/3 w-3 h-3 rounded-full bg-white/40"
-                  />
                 </div>
               </div>
             </div>

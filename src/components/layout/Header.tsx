@@ -4,14 +4,15 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn, scrollToElement } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
-import { MapPin, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: 'hero' },
   { label: 'Features', href: 'features' },
+  { label: 'How It Works', href: 'how-it-works' },
   { label: 'Screenshots', href: 'screenshots' },
-  { label: 'Privacy', href: 'privacy' },
-  { label: 'Contact', href: 'contact' },
+  { label: 'FAQ', href: 'faq' },
+  { label: 'Download', href: 'download' },
 ];
 
 export function Header() {
@@ -23,7 +24,6 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Update active section based on scroll position
       const sections = navLinks.map((link) => link.href);
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
@@ -53,7 +53,7 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={cn(
-          'fixed top-0 left-0 right-0 z-sticky transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-[1100] transition-all duration-300',
           isScrolled
             ? 'bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl shadow-sm'
             : 'bg-transparent'
@@ -68,11 +68,9 @@ export function Header() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white">
-                <MapPin className="w-5 h-5" />
-              </div>
+              <img src="/images/near&DearLogo.png" alt="Near&Dear" className="h-8 w-auto" />
               <span className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-                LocateMe
+                Near<span className="text-primary-500">&</span>Dear
               </span>
             </motion.button>
 
@@ -85,7 +83,7 @@ export function Header() {
                   className={cn(
                     'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
                     activeSection === link.href
-                      ? 'text-primary-600 bg-primary-50 dark:text-primary-400 dark:bg-primary-950/50'
+                      ? 'text-primary-500 bg-primary-50 dark:text-primary-400 dark:bg-primary-950/50'
                       : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-100 dark:hover:bg-neutral-800'
                   )}
                 >
@@ -124,32 +122,27 @@ export function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[1050] bg-black/50 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[1200] bg-black/50 backdrop-blur-sm lg:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Menu Panel */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-[1100] w-[280px] bg-white dark:bg-neutral-950 shadow-2xl lg:hidden"
+              className="fixed top-0 right-0 bottom-0 z-[1300] w-[280px] bg-white dark:bg-neutral-950 shadow-2xl lg:hidden"
             >
               <div className="flex flex-col h-full">
-                {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-800">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white">
-                      <MapPin className="w-5 h-5" />
-                    </div>
+                    <img src="/images/near&DearLogo.png" alt="Near&Dear" className="h-8 w-auto" />
                     <span className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-                      LocateMe
+                      Near<span className="text-primary-500">&</span>Dear
                     </span>
                   </div>
                   <button
@@ -161,7 +154,6 @@ export function Header() {
                   </button>
                 </div>
 
-                {/* Navigation Links */}
                 <nav className="flex-1 overflow-y-auto p-4">
                   <div className="space-y-1">
                     {navLinks.map((link) => (
@@ -171,7 +163,7 @@ export function Header() {
                         className={cn(
                           'w-full px-4 py-3 text-left text-base font-medium rounded-lg transition-all duration-200',
                           activeSection === link.href
-                            ? 'text-primary-600 bg-primary-50 dark:text-primary-400 dark:bg-primary-950/50'
+                            ? 'text-primary-500 bg-primary-50 dark:text-primary-400 dark:bg-primary-950/50'
                             : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-100 dark:hover:bg-neutral-800'
                         )}
                       >
@@ -181,7 +173,6 @@ export function Header() {
                   </div>
                 </nav>
 
-                {/* CTA */}
                 <div className="p-4 border-t border-neutral-200 dark:border-neutral-800">
                   <Button
                     fullWidth

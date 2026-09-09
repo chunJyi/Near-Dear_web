@@ -10,44 +10,44 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'LocateMe - Family Location Tracking App',
-    template: '%s | LocateMe',
+    default: 'Near&Dear – Family & Friend Location Sharing App',
+    template: '%s | Near&Dear',
   },
   description:
-    'LocateMe helps you share real-time location with your loved ones and track what matters most. Because their safety is your peace of mind.',
+    'Share real-time location with family and friends. Live sharing, pinned locations, and per-friend privacy controls — track on Google Maps.',
   keywords: [
-    'location tracking',
+    'location sharing app',
     'family tracker',
-    'GPS tracker',
-    'real-time location',
-    'family safety',
-    'location sharing',
-    'family locator',
+    'friend location',
+    'real-time tracking',
+    'GPS sharing',
+    'Near&Dear',
+    'friend location sharing app',
   ],
-  authors: [{ name: 'LocateMe Team' }],
-  creator: 'LocateMe',
+  authors: [{ name: 'Near&Dear Team' }],
+  creator: 'Near&Dear',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://locateme.app',
-    siteName: 'LocateMe',
-    title: 'LocateMe - Family Location Tracking App',
+    url: 'https://nearanddear.pages.dev/',
+    siteName: 'Near&Dear',
+    title: 'Near&Dear – Family & Friend Location Sharing App',
     description:
-      'Stay connected with your loved ones. Real-time location sharing for families.',
+      'Share real-time location with family and friends. Track on Google Maps.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'LocateMe - Family Location Tracking',
+        alt: 'Near&Dear – Family & Friend Location Sharing',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LocateMe - Family Location Tracking App',
+    title: 'Near&Dear – Family & Friend Location Sharing App',
     description:
-      'Stay connected with your loved ones. Real-time location sharing for families.',
+      'Share real-time location with family and friends. Track on Google Maps.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -62,6 +62,10 @@ export const metadata: Metadata = {
     },
   },
   manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
@@ -71,6 +75,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'MobileApplication',
+              name: 'Near&Dear',
+              operatingSystem: 'ANDROID',
+              applicationCategory: 'SocialNetworkingApplication',
+              description:
+                'Friend and family location sharing app with live, pinned, and hidden sharing modes.',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100">
         {children}
       </body>
