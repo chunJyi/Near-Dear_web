@@ -78,7 +78,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.a
-                href="/release/Near&Dear_D.apk"
+                href="https://gofile.io/d/cTuUuJQB"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-colors duration-200 shadow-lg shadow-primary-500/30"
