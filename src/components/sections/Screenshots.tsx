@@ -38,7 +38,7 @@ const screenshots = [
     description: 'Switch sharing mode per friend — Live, Pinned, or Hidden.',
     icon: Radio,
     gradient: 'from-warning to-amber-500',
-    image: '/images/family.jpg',
+    image: '/images/friendDetail.jpg',
   }
 ];
 
