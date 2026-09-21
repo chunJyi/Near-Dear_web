@@ -114,22 +114,20 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Content - Phone Mockup */}
+          {/* Right Content - App Screenshot */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative flex justify-center lg:justify-end"
           >
-            <PhoneMockup color="black" className="relative z-10">
-              <div className="w-full h-full">
-                <img
-                  src="/images/coverphoto.png"
-                  alt="Near&Dear App Screenshot"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </PhoneMockup>
+            <div className="relative z-10 w-full max-w-sm lg:max-w-sm">
+              <img
+                src="/images/coverphoto.png"
+                alt="Near&Dear App Screenshot"
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
+            </div>
 
             {/* Floating Elements */}
             {floatingElements.map((element, index) => (

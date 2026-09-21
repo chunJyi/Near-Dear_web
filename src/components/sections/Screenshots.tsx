@@ -16,13 +16,21 @@ const screenshots = [
     gradient: 'from-primary-400 to-primary-500',
     image: '/images/home.jpg',
   },
+    {
+    id: 'map',
+    title: 'Live Location Map',
+    description: 'Look at your friends’ live locations on the map in real-time.',
+    icon: MapPin,
+    gradient: 'from-neutral-400 to-slate-500',
+    image: '/images/live.jpg',
+  },
   {
     id: 'friends',
-    title: 'Friends Screen',
+    title: 'Friends',
     description: 'Search, add friends, manage requests, and mark favorites.',
     icon: Users,
     gradient: 'from-success to-emerald-500',
-    image: '/images/live.jpg',
+    image: '/images/friendList.jpg',
   },
   {
     id: 'friend-detail',
@@ -31,15 +39,7 @@ const screenshots = [
     icon: Radio,
     gradient: 'from-warning to-amber-500',
     image: '/images/family.jpg',
-  },
-  {
-    id: 'settings',
-    title: 'Settings',
-    description: 'Dark mode, distance slider, and app preferences.',
-    icon: Settings,
-    gradient: 'from-neutral-400 to-slate-500',
-    image: '/images/settings.jpg',
-  },
+  }
 ];
 
 export function Screenshots() {
